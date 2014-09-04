@@ -142,14 +142,14 @@ describe( 'Element', function tests() {
 
 	});
 
-	describe( 'isVoid', function tests() {
+	describe( 'void', function tests() {
 
 		it( 'should provide a method to determine whether an element is a void element', function test() {
-			expect( element.isVoid ).to.be.a( 'function' );
+			expect( element.void ).to.be.a( 'function' );
 		});
 
 		it( 'should return whether an element is void', function test() {
-			assert.isBoolean( element.isVoid() );
+			assert.isBoolean( element.void() );
 		});
 
 	});
