@@ -5,7 +5,7 @@ var Element = require( './../lib' );
 function HTMLElement( name ) {
 	Element.call( this );
 	this._name = name;
-	this._void = false;
+	this._selfClosing = false;
 	return this;
 }
 

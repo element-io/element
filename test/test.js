@@ -30,18 +30,18 @@ describe( 'Element', function tests() {
 	});
 
 	// Mock elements...
-	function VoidElement() {
+	function SelfClosingElement() {
 		Element.call( this );
-		this._void = true;
+		this._selfClosing = true;
 		return this;
 	}
-	VoidElement.prototype = Object.create( Element.prototype );
-	VoidElement.prototype.constructor = VoidElement;
+	SelfClosingElement.prototype = Object.create( Element.prototype );
+	SelfClosingElement.prototype.constructor = SelfClosingElement;
 
 	function Div() {
 		Element.call( this );
 		this._name = 'div';
-		this._void = false;
+		this._selfClosing = false;
 		return this;
 	}
 	Div.prototype = Object.create( Element.prototype );
@@ -142,14 +142,14 @@ describe( 'Element', function tests() {
 
 	});
 
-	describe( 'void', function tests() {
+	describe( 'selfClosing', function tests() {
 
-		it( 'should provide a method to determine whether an element is a void element', function test() {
-			expect( element.void ).to.be.a( 'function' );
+		it( 'should provide a method to determine whether an element is a self-closing element', function test() {
+			expect( element.selfClosing ).to.be.a( 'function' );
 		});
 
-		it( 'should return whether an element is void', function test() {
-			assert.isBoolean( element.void() );
+		it( 'should return whether an element is self-closing', function test() {
+			assert.isBoolean( element.selfClosing() );
 		});
 
 	});
@@ -160,8 +160,8 @@ describe( 'Element', function tests() {
 			expect( element.append ).to.be.a( 'function' );
 		});
 
-		it( 'should throw an error if one tries to append to a void element', function test() {
-			var el = new VoidElement();
+		it( 'should throw an error if one tries to append to a self-closing element', function test() {
+			var el = new SelfClosingElement();
 			expect( foo ).to.throw( Error );
 			function foo() {
 				el.append( new Element() );
@@ -207,8 +207,8 @@ describe( 'Element', function tests() {
 			assert.strictEqual( el1.toString(), '<div class="beep"><div class="boop"></div></div>' );
 		});
 
-		it( 'should serialize void elements', function test() {
-			var el = new VoidElement();
+		it( 'should serialize self-closing elements', function test() {
+			var el = new SelfClosingElement();
 			assert.strictEqual( el.toString(), '</>' );
 		});
 

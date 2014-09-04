@@ -46,17 +46,17 @@ element.attr();
 Note: to set an attribute `value`, the `value` must be either a `string`, `boolean`, or `number`.
 
 
-#### element.void()
+#### element.selfClosing()
 
-Returns a boolean indicating if an element is a [void element](http://www.w3.org/TR/html-markup/syntax.html).
+Returns a boolean indicating if an element is a [self-closing element](http://www.w3.org/html/wg/drafts/html/master/syntax.html#elements-0).
 
 ``` javascript
-element.void();
+element.selfClosing();
 ```
 
-#### element.append( node )
+#### element.append( element )
 
-Appends a node (Element or [Text](https://github.com/element-io/text) instance) to an `element`. If the `element` is a [void element](http://www.w3.org/TR/html-markup/syntax.html), this method will throw an `Error`.
+Appends another element (Element or [Text](https://github.com/element-io/text) instance) to an `element`. If the `element` is a [self-closing element](http://www.w3.org/html/wg/drafts/html/master/syntax.html#elements-0), this method will throw an `Error`.
 
 ``` javascript
 var el = new Element();
@@ -85,7 +85,7 @@ element.toString();
 function HTMLElement( name ) {
 	Element.call( this );
 	this._name = name;
-	this._void = false;
+	this._selfClosing = false;
 	return this;
 }
 
@@ -134,13 +134,13 @@ $ node ./examples/index.js
 
 ### Inheritance
 
-Classes which inherit from the `Element` class should set the `name` and `void` private properties. Unless the serialization method `toString()` is overwritten, both of these properties are used when serializing an `element` instance.
+Classes which inherit from the `Element` class should set the `name` and `selfClosing` private properties. Unless the serialization method `toString()` is overwritten, both of these properties are used when serializing an `element` instance.
 
 ``` javascript
 function HTMLElement( name ) {
 	Element.call( this );
 	this._name = name;
-	this._void = false;
+	this._selfClosing = false;
 	return this;
 }
 
