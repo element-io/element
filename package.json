@@ -20,7 +20,7 @@
   "main": "./lib",
   "repository": {
     "type": "git",
-    "url": "git://github.com/element-io/minimal-element-class.git"
+    "url": "git://github.com/element-io/element.git"
   },
   "keywords": [
     "DOM",
@@ -28,9 +28,11 @@
     "element"
   ],
   "bugs": {
-    "url": "https://github.com/element-io/minimal-element-class/issues"
+    "url": "https://github.com/element-io/element/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "minimal-text-class": "0.0.0"
+  },
   "devDependencies": {
     "chai": "1.x.x",
     "coveralls": "^2.11.1",

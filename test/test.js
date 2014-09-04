@@ -51,7 +51,7 @@ describe( 'Element', function tests() {
 	// TESTS //
 
 	it( 'should do export a constructor', function test() {
-		expect( Element ).to.be.an( 'object' );
+		expect( Element ).to.be.a( 'function' );
 	});
 
 	describe( 'attr', function tests() {
@@ -122,7 +122,7 @@ describe( 'Element', function tests() {
 
 			function badValue( value ) {
 				return function() {
-					element.attr( value );
+					element.attr( 'class', value );
 				};
 			}
 		});
@@ -171,7 +171,7 @@ describe( 'Element', function tests() {
 		it( 'should throw an error if one tries to append a non-Element or non-TextNode', function test() {
 			expect( foo ).to.throw( Error );
 			function foo() {
-				el.append( new Date() );
+				element.append( new Date() );
 			}
 		});
 

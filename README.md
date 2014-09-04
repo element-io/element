@@ -8,7 +8,7 @@ Element
 ## Installation
 
 ``` bash
-$ npm install minimal-element-class
+$ npm install minimal-element-class --save
 ```
 
 
@@ -25,7 +25,7 @@ var element = new Element();
 The `element` instance has the following methods...
 
 
-#### attr( [name, [value]] )
+#### element.attr( [name, [value]] )
 
 This method is a setter/getter. If no arguments are provided, returns an `object` containing all attribute-value pairs. If only a `name` is provided, returns the corresponding attribute `value`. If the attribute does not exist, returns `undefined`. If a `name` and `value` are provided, sets the attribute `value`.
 
@@ -46,7 +46,7 @@ element.attr();
 Note: to set an attribute `value`, the `value` must be either a `string`, `boolean`, or `number`.
 
 
-#### isVoid()
+#### element.isVoid()
 
 Returns a boolean indicating if an element is a [void element](http://www.w3.org/TR/html-markup/syntax.html).
 
@@ -54,7 +54,7 @@ Returns a boolean indicating if an element is a [void element](http://www.w3.org
 element.isVoid();
 ```
 
-#### append( node )
+#### element.append( node )
 
 Appends a node (Element or [Text](https://github.com/element-io/text) instance) to an `element`. If the `element` is a [void element](http://www.w3.org/TR/html-markup/syntax.html), this method will throw an `Error`.
 
@@ -67,7 +67,7 @@ element.append( el );
 When an `element` is serialized, nested elements are serialized in the order in which they were appended.
 
 
-#### toString()
+#### element.toString()
 
 Serializes an `element` as a `string`.
 
@@ -108,7 +108,7 @@ var h1 = new HTMLElement( 'h1' );
 h1.attr( 'class', 'title' )
 	.attr( 'id', 'title' );
 
-var p = new HTMLElement( '' );
+var p = new HTMLElement( 'p' );
 p.attr( 'class', 'content' );
 
 // Create the document structure...
@@ -194,17 +194,17 @@ Copyright &copy; 2014. Athan Reines.
 [npm-image]: http://img.shields.io/npm/v/minimal-element-class.svg
 [npm-url]: https://npmjs.org/package/minimal-element-class
 
-[travis-image]: http://img.shields.io/travis/element-io/minimal-element-class/master.svg
-[travis-url]: https://travis-ci.org/element-io/minimal-element-class
+[travis-image]: http://img.shields.io/travis/element-io/element/master.svg
+[travis-url]: https://travis-ci.org/element-io/element
 
-[coveralls-image]: https://img.shields.io/coveralls/element-io/minimal-element-class/master.svg
-[coveralls-url]: https://coveralls.io/r/element-io/minimal-element-class?branch=master
+[coveralls-image]: https://img.shields.io/coveralls/element-io/element/master.svg
+[coveralls-url]: https://coveralls.io/r/element-io/element?branch=master
 
-[dependencies-image]: http://img.shields.io/david/element-io/minimal-element-class.svg
-[dependencies-url]: https://david-dm.org/element-io/minimal-element-class
+[dependencies-image]: http://img.shields.io/david/element-io/element.svg
+[dependencies-url]: https://david-dm.org/element-io/element
 
-[dev-dependencies-image]: http://img.shields.io/david/dev/element-io/minimal-element-class.svg
-[dev-dependencies-url]: https://david-dm.org/dev/element-io/minimal-element-class
+[dev-dependencies-image]: http://img.shields.io/david/dev/element-io/element.svg
+[dev-dependencies-url]: https://david-dm.org/dev/element-io/element
 
-[github-issues-image]: http://img.shields.io/github/issues/element-io/minimal-element-class.svg
-[github-issues-url]: https://github.com/element-io/minimal-element-class/issues
+[github-issues-image]: http://img.shields.io/github/issues/element-io/element.svg
+[github-issues-url]: https://github.com/element-io/element/issues

@@ -28,7 +28,7 @@ var h1 = new HTMLElement( 'h1' );
 h1.attr( 'class', 'title' )
 	.attr( 'id', 'title' );
 
-var p = new HTMLElement( '' );
+var p = new HTMLElement( 'p' );
 p.attr( 'class', 'content' );
 
 // Create the document structure...
