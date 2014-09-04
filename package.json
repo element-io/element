@@ -1,6 +1,6 @@
 {
   "name": "minimal-element-class",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Base class for minimal elements.",
   "author": {
     "name": "Athan Reines",
